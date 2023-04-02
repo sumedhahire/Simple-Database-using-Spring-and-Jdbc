@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+      nav {
+          background-color: #333;
+          width: 100%;
+      }
+
+      nav ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          overflow: hidden;
+          background-color: #333;
+      }
+
+      nav li {
+          float: left;
+      }
+
+      nav li a {
+          display: block;
+          padding: 14px 16px;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+      }
+
+      nav li a:hover {
+          background-color: #4CAF50;
+      }
+      body {
+          font-family: Arial, sans-serif;
+      }
+
+      form {
+          margin: 20px auto;
+          width: 80%;
+          max-width: 500px;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+  </style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a th:href="@{home}">Home</a></li>
+    <li><a th:href="@{photo}">Files</a></li>
+    <li><a th:href="@{upload}">Upload</a></li>
+    <li><a th:href="@{download}">Download</a></li>
+  </ul>
+</nav>
+<h1>Welcome to the home page</h1>
+<p>we will be updating are usage instructions soon...</p>
+</body>
+</html>

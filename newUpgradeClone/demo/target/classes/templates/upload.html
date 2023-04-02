@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    nav {
+      background-color: #333;
+      width: 100%;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    nav li {
+      float: left;
+    }
+
+    nav li a {
+      display: block;
+      padding: 14px 16px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    nav li a:hover {
+      background-color: #4CAF50;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 500px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a th:href="@{home}">Home</a></li>
+    <li><a th:href="@{photo}">Files</a></li>
+    <li><a th:href="@{upload}">Upload</a></li>
+    <li><a th:href="@{download}">Download</a></li>
+  </ul>
+</nav>
+<h1>hiiiiiii</h1>
+<h2>Photo Upload</h2>
+
+<!--<input id="fileupload" th:value="${fileupload}" type="file" name="fileupload" />-->
+<!--<button id="upload-button" onclick="uploadFile()"> Upload </button>-->
+
+<!--<script>-->
+<!--    async function uploadFile() {-->
+<!--        let formData = new FormData();-->
+<!--        formData.append("data", fileupload.files[0]);-->
+<!--        await fetch('http://localhost:8080/photo', {-->
+<!--            method: "POST",-->
+<!--            body: formData-->
+<!--        }).then(result =>    result.text())-->
+<!--            .then(text => alert(text));-->
+<!--    }-->
+<!--</script>-->
+<form method="post" action="/upload" enctype="multipart/form-data">
+  <label>Choose a file:</label>
+  <input type="file" name="file"/>
+  <!--    <button type="submit">Upload</button>-->
+  <input type="submit" value="Upload">
+</form>
+</body>
+</html>
