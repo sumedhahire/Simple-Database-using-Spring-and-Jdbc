@@ -5,7 +5,7 @@
   <title>Title</title>
   <style>
     nav {
-      background-color: #333;
+      background-color: #363233;
       width: 100%;
     }
 
@@ -14,7 +14,7 @@
       padding: 0;
       list-style: none;
       overflow: hidden;
-      background-color: #333;
+      background-color: #363233;
     }
 
     nav li {
@@ -53,7 +53,7 @@
       display: block;
       margin: 20px auto;
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #0a2a5e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -68,10 +68,13 @@
     }
 
     h1 {
-      font-size: 48px;
+      /*font-size: 48px;*/
+      font-size: 30px;
       font-weight: bold;
       text-align: center;
-      margin-top: 150px;
+      margin-top: 50px;
+      color: #715fd4;
+      /*-webkit-text-stroke: 0.5px #333333;*/
       text-shadow: 2px 2px #fff;
     }
 
@@ -113,8 +116,9 @@
     <li><a th:href="@{delete}">Delete</a></li>
   </ul>
 </nav>
+<h1>If you delete any file ,there will be no way to recover it again</h1>
 <form method="post" >
-  Delete:<input type="text" id="id" name="id">
+  <b>Delete:</b><input type="text" id="id" name="id">
   <input type="submit" value="Delete">
 </form>
 </body>

@@ -5,7 +5,7 @@
     <title>Title</title>
   <style>
     nav {
-      background-color: #333;
+      background-color: #363233;
       width: 100%;
     }
 
@@ -14,7 +14,7 @@
       padding: 0;
       list-style: none;
       overflow: hidden;
-      background-color: #333;
+      background-color: #363233;
     }
 
     nav li {
@@ -47,13 +47,14 @@
 
     input[type="text"] {
       margin-top: 10px;
+      -webkit-text-stroke: 1px #715fd4;
     }
 
     input[type="submit"] {
       display: block;
       margin: 20px auto;
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #0a2a5e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -68,10 +69,10 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 30px;
       font-weight: bold;
       text-align: center;
-      margin-top: 150px;
+      margin-top: 50px;
       text-shadow: 2px 2px #fff;
     }
 
@@ -113,8 +114,9 @@
     <li><a th:href="@{delete}">Delete</a></li>
   </ul>
 </nav>
+<h1>Just put the id and download the content</h1>
 <form method="post" >
-  Download:<input type="text" id="id" name="id">
+  <b>Download:</b><input type="text" id="id" name="id">
   <input type="submit" value="Delete">
 </form>
 </body>
