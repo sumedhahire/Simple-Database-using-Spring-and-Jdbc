@@ -29,6 +29,11 @@ public class fileController {
 
     }
 
+    @GetMapping("/login")
+    public String getLogin(){
+        return "login";
+    }
+
     @GetMapping("/photo/{id}")
     @ResponseBody
     public Photo get(@PathVariable Integer id){
