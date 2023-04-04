@@ -26,8 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf()
+                .ignoringAntMatchers("/upload","/download","/delete")
+                .and()
                 .authorizeRequests()
-                .antMatchers("/login", "/css/**","*/upload/**", "*/download/**","*/delete/**","/js/**","/h2console/**").permitAll()
+                .antMatchers("/login", "/css/**","/js/**","/h2console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
