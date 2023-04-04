@@ -43,6 +43,12 @@
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      transition: transform 0.3s ease-in-out,background-color 0.3s ease;
+
+    }
+    form:hover{
+      transform: scale(1.1);
+      background: linear-gradient(to right, #ed64d8, #f1c1ec);
     }
 
     input[type="file"] {
@@ -58,6 +64,10 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+    input[type="submit"]:hover{
+      transform: scale(1.1);
+      background-color: #715fd4;
     }
 
     body {
@@ -101,6 +111,24 @@
       background: #666;
       box-shadow: 4px 4px #999;
     }
+    img {
+      position: fixed;
+
+      /* Set the bottom property to 0 to position the image at the bottom of the page */
+      bottom: 0;
+
+      /* Set the left property to 0 to position the image on the left side of the page */
+      right: 0;
+
+      /* Set the width and height of the image to your desired size */
+      width: 300px;
+      height: 300px;
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+      transform: scale(1.1);
+
+    }
   </style>
 </head>
 <body>
@@ -134,6 +162,8 @@
   <input type="file" name="file"/>
   <!--    <button type="submit">Upload</button>-->
   <input type="submit" value="Upload">
+
 </form>
+<img src="../static/images/uploadFile.png">
 </body>
 </html>

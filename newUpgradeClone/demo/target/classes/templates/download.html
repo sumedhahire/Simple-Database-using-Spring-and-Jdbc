@@ -43,6 +43,12 @@
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      transition: transform 0.3s ease-in-out,background-color 5s ease;
+
+    }
+    form:hover{
+      transform: scale(1.1);
+      background: linear-gradient(to right, #a938eb, #daabf5);
     }
 
     input[type="text"] {
@@ -59,6 +65,10 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+    input[type="submit"]:hover{
+      transform: scale(1.1);
+      background-color: #eb792d;
     }
 
     body {
@@ -102,7 +112,26 @@
       background: #666;
       box-shadow: 4px 4px #999;
     }
+    img {
+      position: fixed;
+
+      /* Set the bottom property to 0 to position the image at the bottom of the page */
+      bottom: 0;
+
+      /* Set the left property to 0 to position the image on the left side of the page */
+      right: 0;
+
+      /* Set the width and height of the image to your desired size */
+      width: 300px;
+      height: 300px;
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+
   </style>
+
 </head>
 <body>
 <nav>
@@ -119,5 +148,7 @@
   <b>Download:</b><input type="text" id="id" name="id">
   <input type="submit" value="Delete">
 </form>
+  <img src="../static/images/downloadPage.png" >
+
 </body>
 </html>

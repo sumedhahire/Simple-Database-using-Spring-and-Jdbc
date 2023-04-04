@@ -66,6 +66,11 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+
+        }
+        input[type="submit"]:hover{
+            transform: scale(1.4);
+            background-color: #715fd4;
         }
         form button:hover {
             background-color: #3e8e41;
@@ -74,7 +79,24 @@
         a {
             color: #4CAF50;
         }
+        img {
+            position: fixed;
 
+            /* Set the bottom property to 0 to position the image at the bottom of the page */
+            bottom: 0;
+
+            /* Set the left property to 0 to position the image on the left side of the page */
+            /*right: 230px;*/
+            right: 0;
+
+            /* Set the width and height of the image to your desired size */
+            width: 300px;
+            height: 300px;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -92,5 +114,6 @@
         <input type="submit" value="Login" />
     </div>
 </form>
+<img src="/static/images/loginImg.png">
 </body>
 </html>
