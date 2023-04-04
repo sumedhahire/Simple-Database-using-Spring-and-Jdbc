@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .ignoringAntMatchers("/upload","/download","/delete")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login", "/css/**","/js/**","/h2console/**").permitAll()
+                .antMatchers("/login", "/css/**","/js/**","/h2console/**","/static/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
