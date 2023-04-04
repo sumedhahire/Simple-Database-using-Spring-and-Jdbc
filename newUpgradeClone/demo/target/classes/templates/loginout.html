@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        nav {
+            background-color: #363233;
+            width: 100%;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            background-color: #363233;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            padding: 14px 16px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #DF678C;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out,background-color 5s ease;
+
+        }
+        form:hover{
+            transform: scale(1.1);
+            background: linear-gradient(to right, #a938eb, #daabf5);
+        }
+
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0a2a5e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover{
+            transform: scale(1.1);
+            background-color: #eb792d;
+        }
+
+        body {
+            background: linear-gradient(to right, #a2d1fa, #50a6f2);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+            text-shadow: 2px 2px #fff;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{home}">Home</a></li>
+        <li><a th:href="@{photo}">Files</a></li>
+        <li><a th:href="@{upload}">Upload</a></li>
+        <li><a th:href="@{download}">Download</a></li>
+        <li><a th:href="@{delete}">Delete</a></li>
+        <li><a th:href="@{loginout}">Logout</a></li>
+    </ul>
+</nav>
+<form th:action="@{/login}" method="post">
+    <p>Once you logout,you must login to access the application</p>
+  <input type="submit" value="Logout" />
+</form>
+<h1>Bye....</h1>
+</body>
+</html>

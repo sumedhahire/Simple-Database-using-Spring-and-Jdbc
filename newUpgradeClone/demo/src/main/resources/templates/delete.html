@@ -110,6 +110,23 @@
       background: #666;
       box-shadow: 4px 4px #999;
     }
+    img {
+      position: fixed;
+
+      /* Set the bottom property to 0 to position the image at the bottom of the page */
+      bottom: 0;
+
+      /* Set the left property to 0 to position the image on the left side of the page */
+      right: 0;
+
+      /* Set the width and height of the image to your desired size */
+      width: 400px;
+      height: 400px;
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -120,6 +137,7 @@
     <li><a th:href="@{upload}">Upload</a></li>
     <li><a th:href="@{download}">Download</a></li>
     <li><a th:href="@{delete}">Delete</a></li>
+    <li><a th:href="@{loginout}">Logout</a></li>
   </ul>
 </nav>
 <h1>If you delete any file ,there will be no way to recover it again</h1>
@@ -127,5 +145,6 @@
   <b>Delete:</b><input type="text" id="id" name="id">
   <input type="submit" value="Delete">
 </form>
+<img src="../static/images/trash2.png">
 </body>
 </html>

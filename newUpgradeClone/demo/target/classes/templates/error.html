@@ -30,7 +30,24 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     a{
-      background-color: #715fd4;
+      background-color: yellow;
+    }
+    img {
+      position: fixed;
+
+      /* Set the bottom property to 0 to position the image at the bottom of the page */
+      bottom: 0;
+
+      /* Set the left property to 0 to position the image on the left side of the page */
+      right: 0;
+
+      /* Set the width and height of the image to your desired size */
+      width: 400px;
+      height: 400px;
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -38,15 +55,10 @@
 <div class="container">
   <h1>Error</h1>
   <p>Sorry, an error occurred while processing your request.</p>
-  <p>Maybe you have entered invalid url request or the application has an error3336
-
-
-
-
-
-  </p>
+  <p>Maybe you have entered invalid url request or the application has an error</p>
   <p th:text="@{message}"></p>
   <bold>Return to the home page--></bold><a th:href="@{home}">Home</a>
 </div>
+<img src="../static/images/error404.jpg">
 </body>
 </html>

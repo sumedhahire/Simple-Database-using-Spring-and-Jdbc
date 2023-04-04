@@ -33,6 +33,10 @@ public class fileController {
     public String getLogin(){
         return "login";
     }
+    @GetMapping("/loginout")
+    public String getLoginout(){
+        return "loginout";
+    }
 
     @GetMapping("/photo/{id}")
     @ResponseBody

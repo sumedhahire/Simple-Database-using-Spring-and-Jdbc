@@ -39,7 +39,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/login")
+//                .logoutSuccessUrl("/login")
+                .logoutSuccessUrl("/loginout")
                 .permitAll()
                 .and().csrf().ignoringAntMatchers("/h2console/**")
                 .and().headers().frameOptions().sameOrigin();
