@@ -85,17 +85,8 @@
         }
         img {
             position: fixed;
-
-            /*/* Set the bottom property to 0 to position the image at the bottom of the page */
-            /*center: 500px;*/
-            /*display: block;*/
-            /*margin-left: auto;*/
-            /*margin-right: auto;*/
-
             /* Set the left property to 0 to position the image on the left side of the page */
             right: 0;
-
-
             /* Set the width and height of the image to your desired size */
             width: 300px;
             height: 300px;
@@ -113,10 +104,18 @@
             bottom: 0;
             position: fixed;
         }
+        #bad{
+            color: red;
+            text-align: center;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
 <h1>Login Page</h1>
+<div id="div1" th:if="${param.error}" style="padding: -10px;">
+    <p id="bad" th:text="${'Bad credentials. Please try again.'}" ></p>
+</div>
 <form th:action="@{/login}" method="post">
     <div>
         <label for="username">Username:</label>
@@ -129,6 +128,7 @@
     <div>
         <input type="submit" value="Login" />
     </div>
+
 </form>
 <img src="/static/images/loginImg.png">
 <footer>
