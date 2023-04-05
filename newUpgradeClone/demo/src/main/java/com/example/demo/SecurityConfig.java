@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -27,7 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf()
-                .ignoringAntMatchers("/upload","/download","/delete")
+                .ignoringAntMatchers("/upload","/download","/delete","/photo","/api/**")
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 .and()
                 .authorizeRequests()
                 .antMatchers("/login", "/css/**","/js/**","/h2console/**","/static/**").permitAll()
@@ -43,7 +45,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/loginout")
                 .permitAll()
                 .and().csrf().ignoringAntMatchers("/h2console/**")
-                .and().headers().frameOptions().sameOrigin();
+                .and().headers().frameOptions().sameOrigin()
+                .and()
+                .httpBasic();
     }
 //@Override
 //protected void configure(HttpSecurity http) throws Exception {
