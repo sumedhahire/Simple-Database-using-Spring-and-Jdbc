@@ -108,6 +108,13 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+            bottom: 0;
+            position: fixed;
+        }
     </style>
 </head>
 <body>
@@ -128,6 +135,7 @@
         <th>ID</th>
         <th>Content Type</th>
         <th>File Name</th>
+        <th>File preview</th>
     </tr>
     </thead>
     <tbody>
@@ -135,9 +143,12 @@
         <td th:text="${photo.id}"></td>
         <td th:text="${photo.contentType}"></td>
         <td th:text="${photo.fileName}"></td>
-        <td><img th:src="@{/download/{id}(id=${photo.id})}" alt="Photo" style="max-width: 200px"/></td>
+        <td><img th:src="@{/download/{id}(id=${photo.id})}" alt="Files" style="max-width: 400px"/></td>
     </tr>
     </tbody>
 </table>
+<footer>
+    <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
+</footer>
 </body>
 </html>

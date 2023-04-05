@@ -111,4 +111,9 @@ public class fileController {
     public Photo create(@RequestParam("file") MultipartFile file) throws IOException {
         return photoService.put(file.getOriginalFilename(),file.getContentType(),file.getBytes());
     }
+
+    @GetMapping("/secret")
+    public String getSecret(){
+        return "secret";
+    }
 }

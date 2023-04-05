@@ -74,6 +74,10 @@
         }
         form button:hover {
             background-color: #3e8e41;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            margin: 0 auto;
         }
 
         a {
@@ -82,20 +86,32 @@
         img {
             position: fixed;
 
-            /* Set the bottom property to 0 to position the image at the bottom of the page */
-            bottom: 0;
+            /*/* Set the bottom property to 0 to position the image at the bottom of the page */
+            /*center: 500px;*/
+            /*display: block;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
 
             /* Set the left property to 0 to position the image on the left side of the page */
-            /*right: 230px;*/
             right: 0;
+
 
             /* Set the width and height of the image to your desired size */
             width: 300px;
             height: 300px;
             transition: transform 0.3s ease-in-out;
+
         }
         img:hover{
             transform: scale(1.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+            bottom: 0;
+            position: fixed;
         }
     </style>
 </head>
@@ -115,5 +131,8 @@
     </div>
 </form>
 <img src="/static/images/loginImg.png">
+<footer>
+    <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
+</footer>
 </body>
 </html>
