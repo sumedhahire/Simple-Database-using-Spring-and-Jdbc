@@ -111,7 +111,7 @@
       background: #666;
       box-shadow: 4px 4px #999;
     }
-    img {
+    #designImg {
       position: fixed;
 
       /* Set the bottom property to 0 to position the image at the bottom of the page */
@@ -125,7 +125,7 @@
       height: 300px;
       transition: transform 0.3s ease-in-out;
     }
-    img:hover {
+    #designImg:hover {
       transform: scale(1.1);
 
     }
@@ -165,16 +165,19 @@
 <!--            .then(text => alert(text));-->
 <!--    }-->
 <!--</script>-->
-<form method="post" action="/upload" enctype="multipart/form-data">
+<form method="post" th:action="@{upload}" enctype="multipart/form-data">
   <label>Choose a file:</label>
   <input type="file" name="file"/>
   <!--    <button type="submit">Upload</button>-->
   <input type="submit" value="Upload">
 
 </form>
-<img src="../static/images/uploadFile.png">
+<img id="designImg" src="../static/images/uploadFile.png">
 <footer>
   <a th:href="@{secret}">Project made by Sumedh ahire,TYBSC(CS),ACBCS</a>
 </footer>
+<h1>Upload Successful</h1>
+<img th:if="${photo != null}" th:src="@{/download/{id}(id=${photo.id})}" />
+
 </body>
 </html>

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.core.io.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
 import javax.xml.bind.JAXBContext;
@@ -108,8 +110,11 @@ public class fileController {
 
     @PostMapping("/upload")
     @ResponseBody
-    public Photo create(@RequestParam("file") MultipartFile file) throws IOException {
-        return photoService.put(file.getOriginalFilename(),file.getContentType(),file.getBytes());
+    public RedirectView create(@RequestParam("file") MultipartFile file, Model model, RedirectAttributes redirectAttrs) throws IOException {
+        Photo photo= photoService.put(file.getOriginalFilename(),file.getContentType(),file.getBytes());
+        model.addAttribute("photo",photo);
+        redirectAttrs.addFlashAttribute("successMsg", "Form submitted successfully!");
+        return new RedirectView("/upload");
     }
 
     @GetMapping("/secret")
