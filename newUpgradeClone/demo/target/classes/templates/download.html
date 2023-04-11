@@ -145,6 +145,7 @@
     <li><a th:href="@{home}">Home</a></li>
     <li><a th:href="@{photo}">Files</a></li>
     <li><a th:href="@{upload}">Upload</a></li>
+    <li><a th:href="@{search}">Search</a></li>
     <li><a th:href="@{download}">Download</a></li>
     <li><a th:href="@{delete}">Delete</a></li>
     <li><a th:href="@{loginout}">Logout</a></li>
@@ -153,8 +154,11 @@
 <h1>Just put the id and download the content</h1>
 <form method="post" >
   <b>Download:</b><input type="text" id="id" name="id">
-  <input type="submit" value="Delete">
+  <input type="submit" value="Download">
 </form>
+<h4 th:if="${photo == null and param.id!=null}">
+  not found
+</h4>
   <img src="../static/images/downloadPage.png" >
 <footer>
   <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>

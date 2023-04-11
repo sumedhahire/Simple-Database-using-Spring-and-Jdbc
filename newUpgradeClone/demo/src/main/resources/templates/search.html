@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -30,7 +30,7 @@
         }
 
         nav li a:hover {
-            background-color: #e36517;
+            background-color: #f09f62;
         }
         body {
             font-family: Arial, sans-serif;
@@ -43,19 +43,45 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            transition: transform 0.3s ease-in-out,background-color 0.3s ease;
+
         }
+        form:hover{
+            transform: scale(1.1);
+            background: linear-gradient(to right, #ed64d8, #f1c1ec);
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0a2a5e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover{
+            transform: scale(1.1);
+            background-color: #715fd4;
+        }
+
         body {
-            background: linear-gradient(to right, #c1d7f1, #6495ed);
+            background: linear-gradient(to right, #f1c1ec, #ed64d8);
             font-family: Arial, sans-serif;
             font-size: 16px;
             color: #333;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 30px;
             font-weight: bold;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 30px;
             text-shadow: 2px 2px #fff;
         }
 
@@ -85,30 +111,29 @@
             background: #666;
             box-shadow: 4px 4px #999;
         }
-        /*img {*/
-        /*    position: fixed;*/
+        #designImg {
+            position: fixed;
 
-        /*    !* Set the bottom property to 0 to position the image at the bottom of the page *!*/
-        /*    bottom: 0;*/
+            /* Set the bottom property to 0 to position the image at the bottom of the page */
+            bottom: 0;
 
-        /*    !* Set the left property to 0 to position the image on the left side of the page *!*/
-        /*    right: 0;*/
+            /* Set the left property to 0 to position the image on the left side of the page */
+            right: 0;
 
-        /*    !* Set the width and height of the image to your desired size *!*/
-        /*    width: 350px;*/
-        /*    height: 350px;*/
-        /*}*/
-        img {
-            width: 100px;
-            height: 100px;
-            margin: 5px;
-            cursor: pointer;
+            /* Set the width and height of the image to your desired size */
+            width: 300px;
+            height: 300px;
+            transition: transform 0.3s ease-in-out;
+        }
+        #designImg:hover {
+            transform: scale(1.1);
+
         }
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
         }
-        footer p {
+        footer a {
             margin: 0;
             font-size: 14px;
             color: #333;
@@ -129,27 +154,42 @@
         <li><a th:href="@{loginout}">Logout</a></li>
     </ul>
 </nav>
-<h1>File List</h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Content Type</th>
-        <th>File Name</th>
-        <th>File preview</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="photo : ${photos}">
-        <td th:text="${photo.id}"></td>
-        <td th:text="${photo.contentType}"></td>
-        <td th:text="${photo.fileName}"></td>
-        <td><img th:src="@{/download/{id}(id=${photo.id})}" alt="Files" style="max-width: 400px"/></td>
-    </tr>
-    </tbody>
-</table>
-<footer>
-    <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
-</footer>
+<!--<form method="post" >-->
+<!--  <b>search:</b><input type="text" id="id" name="id">-->
+<!--  <input type="submit" value="search">-->
+<!--</form>-->
+<form th:action="@{/search}" method="post">
+    <label for="id">File:</label>
+    <input type="text" id="id" name="id" required/>
+    <br/><br/>
+    <input type="submit" value="Search"/>
+
+</form>
+<div th:if="${photo != null}">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Content Type</th>
+            <th>File Name</th>
+            <th>File preview</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${photo.id}"></td>
+            <td th:text="${photo.contentType}"></td>
+            <td th:text="${photo.fileName}"></td>
+            <td><img th:src="@{/download/{id}(id=${photo.id})}" alt="Files" style="max-width: 400px"/></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${photo == null and param.id!=null}">
+    <h2>Photo not found</h2>
+</div>
+
+
+
 </body>
 </html>

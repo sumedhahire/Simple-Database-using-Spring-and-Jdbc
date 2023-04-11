@@ -2,6 +2,8 @@ package com.example.demo;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PhotoService {
     private final Repo repo;
@@ -27,6 +29,9 @@ public class PhotoService {
         return photo;
     }
 
+    public Photo searchResult(String str){
+        return repo.findByFileName(str);
+    }
     public void remove(Integer id) {
         repo.deleteById(id);
     }
